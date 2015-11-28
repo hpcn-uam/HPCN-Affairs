@@ -1,12 +1,14 @@
-Instalar Modelsim en Linux
+# Como instalar Modelsim en Linux
 
 La última versión disponible para linux es la 10.1b_linux que utiliza las librerias de freetype-2.4.7 a demas no trae compiladas algunas librerias para simular, por lo tanto hay que instalarlas.
 
-Primero instalamos ModelSim 
+## Instalando ModelSim 
+* Descargar la version de ModelSim 10.1b_linux
 ````
+$ cd (directorio_descarga_modelsim)
 $ ./install.linux
 ````
-luego debemos descargar la libreria de freetype-2.4.7
+* Descargamos la libreria de freetype-2.4.7
 ````
 $ wget download.savannah.gnu.org/releases/freetype/freetype-2.4.7.tar.gz
 $ tar -zxvf freetype-2.4.7.tar.gz
@@ -14,22 +16,22 @@ $ cd freetype-2.4.7
 $ ./configure
 $ make -j2
 ````
-Ahora debemos copiar las librerias al directorio donde se instalo ModelSim
+* Copiar las librerias al directorio donde se instalo ModelSim
 ````
 $ mkdir (directorio_instalacion_modelsim)/lib32
 $ cp objs/.libs/* (directorio_instalacion_modelsim)/lib32
 ````
 Ya tenemos las librerias compiladas y copiadas, ahora debemos modificar el ejecutable para que linke con esteas librerias
 
-buscamos la linea dentro del archivo (directorio_instalacion_modelsim)/bin/vsim
+*Buscamos la linea dentro del archivo (directorio_instalacion_modelsim)/bin/vsim
 
 `dir=\`dirname $arg0\``
 
-A continuación agregamos el siguiente comando
+A continuación agregamos la siguiente línea
 
 `export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${dir}/lib32`
 
-Ahora agregamos en el ~/.bashsrc o ~/.bash_profile lo siguiente 
+*Agregamos en el ~/.bashsrc o ~/.bash_profile para que el ejecutable se pueda lanzar desde la consola 
 ````
 export PATH=$PATH:(directorio_instalacion_modelsim)/bin
 export MODEL_TECH="(directorio_instalacion_modelsim)/linux_x86_64"
