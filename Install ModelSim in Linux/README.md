@@ -23,20 +23,20 @@ Ya tenemos las librerias compiladas y copiadas, ahora debemos modificar el ejecu
 
 buscamos la linea dentro del archivo (directorio_instalacion_modelsim)/bin/vsim
 
-dir=\`dirname $arg0\`
+`dir=\`dirname $arg0\``
 
 A continuación agregamos el siguiente comando
 
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${dir}/lib32
+`export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${dir}/lib32`
 
 Ahora agregamos en el ~/.bashsrc o ~/.bash_profile lo siguiente 
-
+````
 export PATH=$PATH:(directorio_instalacion_modelsim)/bin
 export MODEL_TECH="(directorio_instalacion_modelsim)/linux_x86_64"
-
+````
 Hacemos que la variable de entorno MGLS_LICENSE_FILE apunte al servidor de licencias 
 
-export MGLS_LICENSE_FILE=(puerto)@servidor_de_licencias 
+`export MGLS_LICENSE_FILE=(puerto)@servidor_de_licencias`
 
 A partir de este momento ModelSim ya puede carga, pero es probable que si queremos simular algo diga que faltan librerias. Para solucionar esto debemos compilarlas desde Vivado.
 
