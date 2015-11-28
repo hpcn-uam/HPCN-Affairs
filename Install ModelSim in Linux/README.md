@@ -23,7 +23,7 @@ Ya tenemos las librerias compiladas y copiadas, ahora debemos modificar el ejecu
 
 buscamos la linea dentro del archivo (directorio_instalacion_modelsim)/bin/vsim
 
-`dir=`dirname $arg0``
+dir=\`dirname $arg0\`
 
 A continuación agregamos el siguiente comando
 
