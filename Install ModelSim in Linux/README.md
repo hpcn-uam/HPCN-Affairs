@@ -44,13 +44,13 @@ Abrimos Vivado
 
 Definimos donde esta el ejecutable de ModelSim, para ello Tools -> Options -> General ModelSim install Path
 
-[ModelSim_EXE](https://github.com/hpcn-uam/HPCN-Affairs/blob/master/Install%20ModelSim%20in%20Linux/vivado_general_options.png)
+![ModelSim_EXE](https://github.com/hpcn-uam/HPCN-Affairs/blob/master/Install%20ModelSim%20in%20Linux/vivado_general_options.png)
 
 Luego para compilar las librerias 
 
 Tools -> Compile Simulationr Libraries -> Compiled Library location : (directorio_instalacion_modelsim) 
 
-[ModelSim_EXE](https://github.com/hpcn-uam/HPCN-Affairs/blob/master/Install%20ModelSim%20in%20Linux/vivado_library_options.png)
+![ModelSim_EXE](https://github.com/hpcn-uam/HPCN-Affairs/blob/master/Install%20ModelSim%20in%20Linux/vivado_library_options.png)
 
 O ejecutando el siguente en la consola tcl de Vivado
 
