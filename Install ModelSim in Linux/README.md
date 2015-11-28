@@ -24,9 +24,9 @@ $ cp objs/.libs/* (directorio_instalacion_modelsim)/lib32
 Ya tenemos las librerias compiladas y copiadas, ahora debemos modificar el ejecutable para que linke con esteas librerias
 
 * Buscamos la linea dentro del archivo (directorio_instalacion_modelsim)/bin/vsim
-
-`dir=\`dirname $arg0\``
-
+````
+ dir=\`dirname $arg0\` 
+````
 A continuación agregamos la siguiente línea
 
 `export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${dir}/lib32`
@@ -70,13 +70,13 @@ Modificar el archivo (directorio_instalacion_modelsim)/modelsim.ini
 
 Agregamos allí las siguientes líneas
 ````
-secureip 		= $MODEL_TECH/../secureip
-simprims_ver 	= $MODEL_TECH/../simprims_ver
-unifast  		= $MODEL_TECH/../unifast  	
-unifast_ver  	= $MODEL_TECH/../unifast_ver 
-unimacro  		= $MODEL_TECH/../unimacro  		
-unimacro_ver  	= $MODEL_TECH/../unimacro_ver
-unisim  		= $MODEL_TECH/../unisim  		 
-unisims_ver		= $MODEL_TECH/../unisims_ver	
+secureip 		= $MODEL_TECH/secureip
+simprims_ver 	= $MODEL_TECH/simprims_ver
+unifast  		= $MODEL_TECH/unifast  	
+unifast_ver  	= $MODEL_TECH/unifast_ver 
+unimacro  		= $MODEL_TECH/unimacro  		
+unimacro_ver  	= $MODEL_TECH/unimacro_ver
+unisim  		= $MODEL_TECH/unisim  		 
+unisims_ver		= $MODEL_TECH/unisims_ver	
 ````
 Por fin ya esta listo ModelSim para simular
