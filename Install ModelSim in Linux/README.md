@@ -44,13 +44,13 @@ Abrimos Vivado
 
 Definimos donde esta el ejecutable de ModelSim, para ello Tools -> Options -> General ModelSim install Path
 
-[ModelSim_EXE](/vivado_general_options.png)
+[ModelSim_EXE](https://github.com/hpcn-uam/HPCN-Affairs/blob/master/Install%20ModelSim%20in%20Linux/vivado_general_options.png)
 
 Luego para compilar las librerias 
 
 Tools -> Compile Simulationr Libraries -> Compiled Library location : (directorio_instalacion_modelsim) 
 
-[ModelSim_EXE](/vivado_library_options.png)
+[ModelSim_EXE](https://github.com/hpcn-uam/HPCN-Affairs/blob/master/Install%20ModelSim%20in%20Linux/vivado_library_options.png)
 
 O ejecutando el siguente en la consola tcl de Vivado
 
@@ -61,7 +61,7 @@ compile_simlib -force -language all -dir {(directorio_instalacion_modelsim)} -si
 Luego que se compilen las librerias hay que indicarle a ModelSim donde se encuentran esto se hace modificando el archivo (directorio_instalacion_modelsim)/modelsim.ini
 
 Agregamos allí las siguientes líneas
-
+````
 secureip 		= $MODEL_TECH/../secureip
 simprims_ver 	= $MODEL_TECH/../simprims_ver
 unifast  		= $MODEL_TECH/../unifast  	
@@ -70,5 +70,5 @@ unimacro  		= $MODEL_TECH/../unimacro
 unimacro_ver  	= $MODEL_TECH/../unimacro_ver
 unisim  		= $MODEL_TECH/../unisim  		 
 unisims_ver		= $MODEL_TECH/../unisims_ver	
-
+````
 Por fin ya esta listo ModelSim para simular
