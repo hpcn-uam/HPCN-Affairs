@@ -70,13 +70,13 @@ Modificar el archivo (directorio_instalacion_modelsim)/modelsim.ini
 
 Agregamos allí las siguientes líneas
 ````
-secureip 		= $MODEL_TECH/secureip
-simprims_ver 	= $MODEL_TECH/simprims_ver
-unifast  		= $MODEL_TECH/unifast  	
-unifast_ver  	= $MODEL_TECH/unifast_ver 
-unimacro  		= $MODEL_TECH/unimacro  		
-unimacro_ver  	= $MODEL_TECH/unimacro_ver
-unisim  		= $MODEL_TECH/unisim  		 
-unisims_ver		= $MODEL_TECH/unisims_ver	
+secureip 		= $MODEL_TECH/../secureip
+simprims_ver 	= $MODEL_TECH/../simprims_ver
+unifast  		= $MODEL_TECH/../unifast  	
+unifast_ver  	= $MODEL_TECH/../unifast_ver 
+unimacro  		= $MODEL_TECH/../unimacro  		
+unimacro_ver  	= $MODEL_TECH/../unimacro_ver
+unisim  		= $MODEL_TECH/../unisim  		 
+unisims_ver		= $MODEL_TECH/../unisims_ver	
 ````
 Por fin ya esta listo ModelSim para simular
