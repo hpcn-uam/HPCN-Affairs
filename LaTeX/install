@@ -1,0 +1,51 @@
+#!/bin/bash
+tred=$(tput setaf 1)
+treset=$(tput sgr0)
+latex_dir=$(dirname $(kpsewhich article.cls))
+
+function trycopy() {
+	file=$1
+	dir="$2"
+
+	if [ -d "$dir" ] ; then
+		cp -vf "$file" "$dir"
+	fi
+}
+
+echo "Copying packages..."
+if ! cp -v *.sty $latex_dir ; then
+	echo "${tred}Error copying packages! Did you run with sudo?${treset}"
+	exit
+else
+	echo "Packages copied."
+fi
+
+echo "Copying classes..."
+
+if ls *.cls &> /dev/null; then
+	if ! cp -v *.cls $latex_dir ; then
+		echo "${tred}Error copying classes! Did you run with sudo?${treset}"
+		exit
+	else
+		echo "Classes copied"
+	fi
+fi
+
+if ls *.png &> /dev/null; then
+	if ! cp -v *.png $latex_dir ; then
+		echo "${tred}Error copying classes! Did you run with sudo?${treset}"
+		exit
+	else
+		echo "Classes copied"
+	fi
+fi
+
+echo "Updating package cache..."
+
+if ! texhash ; then
+	echo "${tred}Couldn't update cache${treset}"
+else
+	echo "Package cache updated."
+fi
+
+echo "Finished"
